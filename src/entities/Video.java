@@ -33,7 +33,9 @@ public class Video implements AcoesVideo{
 	}
 
 	public void setAvaliacao(Integer avaliacao) {
-		this.avaliacao = avaliacao;
+		int nota;
+		nota = (int) (this.getAvaliacao() + avaliacao) / this.views;
+		this.avaliacao = nota;
 	}
 
 	public Integer getViews() {
@@ -79,7 +81,8 @@ public class Video implements AcoesVideo{
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Titulo: " + this.titulo);
-		sb.append("\nAvaliacoes: " + this.getAvaliacao());
+		sb.append("\nViews: " + this.views);
+		sb.append("\nNota: " + this.getAvaliacao());
 		sb.append("\nLikes: " + this.getCurtidas());
 		sb.append("\nReproduzindo: " + this.getReproduzindo());
 		return sb.toString();
