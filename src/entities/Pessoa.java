@@ -11,11 +11,11 @@ public abstract class  Pessoa {
 		
 	}
 
-	public Pessoa(String nome, Integer idade, Character sexo, Integer experiencia) {
+	public Pessoa(String nome, Integer idade, Character sexo) {
 		this.nome = nome;
 		this.idade = idade;
 		this.sexo = sexo;
-		this.experiencia = experiencia;
+		this.experiencia = 0;
 	}
 
 	public String getNome() {
@@ -54,5 +54,6 @@ public abstract class  Pessoa {
 		this.setExperiencia(this.getExperiencia()+1);
 	}
 	
+
 	
 }

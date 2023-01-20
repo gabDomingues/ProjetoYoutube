@@ -2,25 +2,25 @@ package entities;
 
 public class Gafanhoto extends Pessoa{
 	
-	private Boolean login;
+	private String login;
 	private Integer totAssistido;
 	
 	public Gafanhoto() {
 		super();
 	}
 
-	public Gafanhoto(String nome, Integer idade, Character sexo, Integer experiencia, 
-			Boolean login, Integer totAssistido) {
-		super(nome, idade, sexo, experiencia);
+	public Gafanhoto(String nome, Integer idade, Character sexo, 
+			String login) {
+		super(nome, idade, sexo);
 		this.login = login;
-		this.totAssistido = totAssistido;
+		this.totAssistido = 0;
 	}
 
-	public Boolean getLogin() {
+	public String getLogin() {
 		return login;
 	}
 
-	public void setLogin(Boolean login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 
@@ -35,5 +35,17 @@ public class Gafanhoto extends Pessoa{
 	public void viuMaisUm() {
 		this.setTotAssistido(this.getTotAssistido()+1);
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nome: " + this.nome);
+		sb.append("\nIdade: " + this.idade);
+		sb.append("\nSexo: " + this.sexo);
+		sb.append("\nLogin: " + this.login);
+		sb.append("\nTotal Assistido: " + this.totAssistido);
+		return sb.toString();
+	}
+	
 	
 }

@@ -3,8 +3,8 @@ package entities;
 public class Video implements AcoesVideo{
 	
 	private String titulo;
-	private Double avaliacao;
-	private Double views;
+	private Integer avaliacao;
+	private Integer views;
 	private Integer curtidas;
 	private Boolean reproduzindo;
 	
@@ -12,12 +12,11 @@ public class Video implements AcoesVideo{
 		
 	}
 
-	public Video(String titulo, Double avaliacao, Double views,
-			Integer curtidas) {
+	public Video(String titulo) {
 		this.titulo = titulo;
-		this.avaliacao = avaliacao;
-		this.views = views;
-		this.curtidas = curtidas;
+		this.avaliacao = 0;
+		this.views = 0;
+		this.curtidas = 0;
 		this.reproduzindo = false;
 	}
 
@@ -29,19 +28,19 @@ public class Video implements AcoesVideo{
 		this.titulo = titulo;
 	}
 
-	public Double getAvaliacao() {
+	public Integer getAvaliacao() {
 		return avaliacao;
 	}
 
-	public void setAvaliacao(Double avaliacao) {
+	public void setAvaliacao(Integer avaliacao) {
 		this.avaliacao = avaliacao;
 	}
 
-	public Double getViews() {
+	public Integer getViews() {
 		return views;
 	}
 
-	public void setViews(Double views) {
+	public void setViews(Integer views) {
 		this.views = views;
 	}
 
@@ -76,5 +75,13 @@ public class Video implements AcoesVideo{
 		this.setCurtidas(this.getCurtidas()+1);
 	}
 	
-	
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Titulo: " + this.titulo);
+		sb.append("\nAvaliacoes: " + this.getAvaliacao());
+		sb.append("\nLikes: " + this.getCurtidas());
+		sb.append("\nReproduzindo: " + this.getReproduzindo());
+		return sb.toString();
+	}
 }
